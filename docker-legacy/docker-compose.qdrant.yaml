@@ -1,0 +1,12 @@
+services:
+  # Qdrant vector store.
+  qdrant:
+    image: mlchain/qdrant:v1.7.3
+    restart: always
+    volumes:
+      - ./volumes/qdrant:/qdrant/storage
+    environment:
+      QDRANT_API_KEY: 'mlchainai123456'
+    ports:
+      - "6333:6333"
+      - "6334:6334"
